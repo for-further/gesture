@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+    
+    <LinearLayout 
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:orientation="horizontal">
+        
+        <TextView 
+           	android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:layout_weight="4"
+            android:text="请选择一个动作：" />
+        <Button
+            android:id="@+id/back"
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="back"
+            />"
+        
+    </LinearLayout>
+    
+    <TextView 
+        android:id="@+id/opensite"
+        android:layout_width="match_parent"
+        android:layout_height="50dip"
+        android:gravity="center"
+        android:text="打开网页"
+        android:textSize="20dip"
+        android:background="#696969"
+        />
+    
+    <TextView 
+        android:id="@+id/openapp"
+        android:layout_width="match_parent"
+        android:layout_height="50dip"
+        android:gravity="center"
+        android:text="运行应用程序"
+        android:textSize="20dip"
+        
+        />
+    
+
+</LinearLayout>
