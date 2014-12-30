@@ -70,6 +70,29 @@ public class GesturePerformedActivity extends Activity {
 					        Uri content_url = Uri.parse(Name);
 					        intent.setData(content_url);
 					        startActivity(intent);
+						}else if(Name.indexOf("make phone call") == 0){
+							String phone = "";
+							int flag = 0;
+							for(int i=0; i<Name.length() - 1; i++){
+								if(flag == 1) phone += Name.charAt(i);
+								if(Name.charAt(i) == '(') flag = 1;
+							}
+							System.out.println(phone);
+							Intent dialIntent = new Intent(Intent.ACTION_CALL, Uri
+									.parse("tel:" + phone));
+							startActivity(dialIntent);
+						}else if(Name.indexOf("send message") == 0){
+							String phone = "";
+							int flag = 0;
+							for(int i=0; i<Name.length() - 1; i++){
+								if(flag == 1) phone += Name.charAt(i);
+								if(Name.charAt(i) == '(') flag = 1;
+							}
+							System.out.println(phone);
+							Intent intent = new Intent(Intent.ACTION_VIEW); 
+							intent.setType("vnd.android-dir/mms-sms");  
+							intent.setData(Uri.parse("content://mms-sms/conversations/" + phone));//此为号码
+							startActivity(intent);
 						}else{
 							/*
 							 * 手势是应用程序
@@ -92,7 +115,16 @@ public class GesturePerformedActivity extends Activity {
 //						Intent in = new Intent(GesturePerformedActivity.this, GestureBuilderActivity.class);
 //						startActivity(in);
 						/******/
+					}else{
+						System.out.println("!!!!!");
+						Toast.makeText(GesturePerformedActivity.this,
+								"没有匹配的手势", Toast.LENGTH_SHORT).show();
 					}
+				}
+				else{
+					System.out.println("!!!!!");
+					Toast.makeText(GesturePerformedActivity.this,
+							"没有匹配的手势", Toast.LENGTH_SHORT).show();
 				}
 			}
 		});

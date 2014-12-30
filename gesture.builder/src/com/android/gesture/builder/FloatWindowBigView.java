@@ -124,6 +124,35 @@ public class FloatWindowBigView extends LinearLayout {
 					        context.startActivity(intent);
 					        MyWindowManager.removeBigWindow(context);  
 			                MyWindowManager.createSmallWindow(context); 
+						}else if(Name.indexOf("make phone call") == 0){
+							String phone = "";
+							int flag = 0;
+							for(int i=0; i<Name.length() - 1; i++){
+								if(flag == 1) phone += Name.charAt(i);
+								if(Name.charAt(i) == '(') flag = 1;
+							}
+							System.out.println(phone);
+							Intent dialIntent = new Intent(Intent.ACTION_CALL, Uri
+									.parse("tel:" + phone));
+							dialIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+							context.startActivity(dialIntent);
+							MyWindowManager.removeBigWindow(context);  
+			                MyWindowManager.createSmallWindow(context); 
+						}else if(Name.indexOf("send message") == 0){
+							String phone = "";
+							int flag = 0;
+							for(int i=0; i<Name.length() - 1; i++){
+								if(flag == 1) phone += Name.charAt(i);
+								if(Name.charAt(i) == '(') flag = 1;
+							}
+							System.out.println(phone);
+							Intent intent = new Intent(Intent.ACTION_VIEW);
+							intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+							intent.setType("vnd.android-dir/mms-sms");  
+							intent.setData(Uri.parse("content://mms-sms/conversations/" + phone));//此为号码
+							context.startActivity(intent);
+							MyWindowManager.removeBigWindow(context);  
+			                MyWindowManager.createSmallWindow(context); 
 						}else{
 							/*
 							 * 手势是应用程序

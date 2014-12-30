@@ -118,6 +118,7 @@ public class GestureBuilderActivity extends ListActivity {
 			@Override
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
+				
 				Intent intent = new Intent(GestureBuilderActivity.this, ChooseActivity.class);
 				startActivity(intent);
 			}

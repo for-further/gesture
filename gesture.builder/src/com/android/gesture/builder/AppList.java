@@ -6,6 +6,7 @@ import java.util.Map;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
@@ -54,7 +55,9 @@ public class AppList extends Activity{
 			PackageManager pm = getPackageManager();
 			// 得到系统安装的所有程序包的PackageInfo对象
 			List<PackageInfo> packs = pm.getInstalledPackages(0);
-			for (PackageInfo pi : packs) {
+			for (PackageInfo pi : packs) 
+			if ((pi.applicationInfo.flags & ApplicationInfo.FLAG_SYSTEM) == 0 || (pi.applicationInfo.flags & ApplicationInfo.FLAG_UPDATED_SYSTEM_APP) != 0){
+				//如果不是系统应用，或者是系统应用但是用户更新过
 				AppData appData = new AppData(pi.applicationInfo.loadLabel(pm),
 						pi.applicationInfo.packageName,
 						pi.applicationInfo.loadIcon(pm));

@@ -18,47 +18,56 @@ public final class R {
         public static final int gesture_thumbnail_size=0x7f050001;
     }
     public static final class drawable {
-        public static final int ic_gesturebuilder=0x7f020000;
-        public static final int ic_launcher=0x7f020001;
-        public static final int window=0x7f020002;
+        public static final int contact_photo=0x7f020000;
+        public static final int ic_gesturebuilder=0x7f020001;
+        public static final int ic_launcher=0x7f020002;
+        public static final int window=0x7f020003;
     }
     public static final class id {
         public static final int DoneWeb=0x7f080002;
-        public static final int addButton=0x7f08000f;
-        public static final int app=0x7f08000a;
-        public static final int appName=0x7f080015;
-        public static final int appPackageName=0x7f080016;
+        public static final int addButton=0x7f080013;
+        public static final int app=0x7f08000e;
+        public static final int appName=0x7f08001b;
+        public static final int appPackageName=0x7f08001c;
         public static final int app_List=0x7f080000;
-        public static final int app_icon=0x7f080014;
-        public static final int back=0x7f080009;
-        public static final int big_window_layout=0x7f080007;
-        public static final int close=0x7f080008;
-        public static final int done=0x7f080004;
-        public static final int gestures_overlay=0x7f080003;
-        public static final int label=0x7f080005;
-        public static final int linear_top_id=0x7f08000c;
-        public static final int myGestures1=0x7f08000b;
-        public static final int name=0x7f080006;
-        public static final int openapp=0x7f080013;
-        public static final int opensite=0x7f080012;
-        public static final int percent=0x7f08000e;
-        public static final int small_window_layout=0x7f08000d;
-        public static final int start_float_window=0x7f080010;
-        public static final int stop_float_window=0x7f080011;
+        public static final int app_icon=0x7f08001a;
+        public static final int back=0x7f08000d;
+        public static final int big_window_layout=0x7f08000b;
+        public static final int call=0x7f080018;
+        public static final int close=0x7f08000c;
+        public static final int contactList=0x7f080003;
+        public static final int done=0x7f080008;
+        public static final int gestures_overlay=0x7f080007;
+        public static final int label=0x7f080009;
+        public static final int linear_top_id=0x7f080010;
+        public static final int message=0x7f080019;
+        public static final int mimage=0x7f080004;
+        public static final int mname=0x7f080005;
+        public static final int mnumber=0x7f080006;
+        public static final int myGestures1=0x7f08000f;
+        public static final int name=0x7f08000a;
+        public static final int openapp=0x7f080017;
+        public static final int opensite=0x7f080016;
+        public static final int percent=0x7f080012;
+        public static final int small_window_layout=0x7f080011;
+        public static final int start_float_window=0x7f080014;
+        public static final int stop_float_window=0x7f080015;
         public static final int webname=0x7f080001;
     }
     public static final class layout {
         public static final int add_app=0x7f030000;
         public static final int add_website=0x7f030001;
-        public static final int create_gesture=0x7f030002;
-        public static final int dialog_rename=0x7f030003;
-        public static final int float_window_big=0x7f030004;
-        public static final int float_window_small=0x7f030005;
-        public static final int gesture_perform=0x7f030006;
-        public static final int gestures_item=0x7f030007;
-        public static final int gestures_list=0x7f030008;
-        public static final int gestures_name=0x7f030009;
-        public static final int list_item=0x7f03000a;
+        public static final int contacts=0x7f030002;
+        public static final int contacts_item=0x7f030003;
+        public static final int create_gesture=0x7f030004;
+        public static final int dialog_rename=0x7f030005;
+        public static final int float_window_big=0x7f030006;
+        public static final int float_window_small=0x7f030007;
+        public static final int gesture_perform=0x7f030008;
+        public static final int gestures_item=0x7f030009;
+        public static final int gestures_list=0x7f03000a;
+        public static final int gestures_name=0x7f03000b;
+        public static final int list_item=0x7f03000c;
     }
     public static final class string {
         /**  Application name 
