@@ -48,18 +48,23 @@ public class GesturePerformedActivity extends Activity {
 			@Override
 			public void onGesturePerformed(GestureOverlayView overlay,
 					Gesture gesture) {
+				System.out.println("11234");
 				// 从手势库中查询匹配的内容，匹配的结果可能包括多个相似的结果，匹配度高的结果放在最前面
 				ArrayList<Prediction> predictions = mGestureLib
 						.recognize(gesture); 	
 				if (predictions.size() > 0) {
 					Prediction prediction = (Prediction) predictions.get(0);
+					if(prediction.name.equals("锁屏手势")){
+						System.out.println("最相似的是锁屏手势");
+						prediction = (Prediction) predictions.get(1);
+						
+					}
 					// 匹配的手势
 					if (prediction.score > 1.0) { // 越匹配score的值越大，最大为10
 						Toast.makeText(GesturePerformedActivity.this,
 								prediction.name, Toast.LENGTH_SHORT).show();
 						
 						String Name = prediction.name;
-						
 						if(Name.charAt(0) == 'h' && Name.charAt(1) == 't' && Name.charAt(2) == 't' && Name.charAt(3) == 'p' && Name.charAt(4) == ':' && Name.charAt(5) == '/' && Name.charAt(6) == '/'){
 							/*
 							 * 手势的名字是网址，打开相应的浏览器
@@ -105,6 +110,7 @@ public class GesturePerformedActivity extends Activity {
 							for(int i=0; i<packs.size(); i++){
 								PackageInfo pi = packs.get(i);
 								if(pi.applicationInfo.loadLabel(getPackageManager()).toString().equals(Name)){
+//									System.out.println(pi.packageName);
 									GesturePerformedActivity.this.startActivity(getPackageManager()
 											.getLaunchIntentForPackage(
 													pi.packageName));

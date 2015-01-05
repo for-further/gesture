@@ -24,30 +24,42 @@ public final class R {
         public static final int window=0x7f020003;
     }
     public static final class id {
+        public static final int Battery=0x7f080023;
+        public static final int Date=0x7f080022;
         public static final int DoneWeb=0x7f080002;
+        public static final int HHmm=0x7f080021;
+        public static final int R001=0x7f080016;
         public static final int addButton=0x7f080013;
         public static final int app=0x7f08000e;
-        public static final int appName=0x7f08001b;
-        public static final int appPackageName=0x7f08001c;
+        public static final int appName=0x7f08001e;
+        public static final int appPackageName=0x7f08001f;
         public static final int app_List=0x7f080000;
-        public static final int app_icon=0x7f08001a;
+        public static final int app_icon=0x7f08001d;
         public static final int back=0x7f08000d;
         public static final int big_window_layout=0x7f08000b;
-        public static final int call=0x7f080018;
+        public static final int call=0x7f080019;
         public static final int close=0x7f08000c;
         public static final int contactList=0x7f080003;
         public static final int done=0x7f080008;
         public static final int gestures_overlay=0x7f080007;
         public static final int label=0x7f080009;
+        public static final int layout=0x7f080020;
         public static final int linear_top_id=0x7f080010;
-        public static final int message=0x7f080019;
+        public static final int lock=0x7f08001b;
+        public static final int lockHome=0x7f080025;
+        public static final int lockcamera=0x7f080028;
+        public static final int lockimage=0x7f08001c;
+        public static final int lockmessage=0x7f080027;
+        public static final int lockphone=0x7f080026;
+        public static final int message=0x7f08001a;
         public static final int mimage=0x7f080004;
+        public static final int mlock=0x7f080024;
         public static final int mname=0x7f080005;
         public static final int mnumber=0x7f080006;
         public static final int myGestures1=0x7f08000f;
         public static final int name=0x7f08000a;
-        public static final int openapp=0x7f080017;
-        public static final int opensite=0x7f080016;
+        public static final int openapp=0x7f080018;
+        public static final int opensite=0x7f080017;
         public static final int percent=0x7f080012;
         public static final int small_window_layout=0x7f080011;
         public static final int start_float_window=0x7f080014;
@@ -68,6 +80,8 @@ public final class R {
         public static final int gestures_list=0x7f03000a;
         public static final int gestures_name=0x7f03000b;
         public static final int list_item=0x7f03000c;
+        public static final int lock_screen=0x7f03000d;
+        public static final int lock_set=0x7f03000e;
     }
     public static final class string {
         /**  Application name 

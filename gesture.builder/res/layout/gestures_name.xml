@@ -5,6 +5,7 @@
     android:orientation="vertical" >
     
     <LinearLayout 
+        android:id="@+id/R001"
         android:layout_width="match_parent"
         android:layout_height="40dp"
         android:orientation="horizontal">
@@ -20,7 +21,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="back"
-            />"
+            />
         
     </LinearLayout>
     
@@ -63,5 +64,22 @@
         
         />
     
+     <TextView
+         android:id="@+id/lock"
+         android:layout_width="match_parent"
+         android:layout_height="50dip" 
+         android:gravity="center"
+         android:text="设置锁屏手势"
+         android:textSize="20dip"
+         android:background="#696969" />
+     
+     <TextView
+         android:id="@+id/lockimage"
+         android:layout_width="match_parent"
+         android:layout_height="50dip" 
+         android:gravity="center"
+         android:text="设置锁屏图片"
+         android:textSize="20dip"/>
 
 </LinearLayout>
+         

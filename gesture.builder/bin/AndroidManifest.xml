@@ -27,16 +27,22 @@
   	<uses-permission android:name="android.permission.CALL_PHONE"/>  
   	<!-- 发送短信权限 -->
   	<uses-permission android:name="android.permission.SEND_SMS"/>
+    <uses-permission android:name="android.permission.DISABLE_KEYGUARD"></uses-permission>
+    <uses-permission android:name="android.permission.VIBRATE"></uses-permission>
+    <!-- 开机自启动 -->
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
 
     <uses-sdk
         android:minSdkVersion="4"
         android:targetSdkVersion="11" />
 
-    <application>
+    <application
+        android:label="@string/application_name">
         <activity
             android:name="GestureBuilderActivity"
             android:icon="@drawable/ic_gesturebuilder"
-            android:label="@string/application_name" >
+            android:label="@string/application_name"
+            android:launchMode="singleTask" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -68,7 +74,32 @@
             android:name="com.android.gesture.builder.Contacts"
             android:label="@string/application_name"/>
         
+        <activity
+            android:name="com.android.gesture.builder.LockScreen"
+            android:label="@string/application_name">
+        </activity>
+        <activity
+            android:name="com.android.gesture.builder.Home"
+            android:label="@string/application_name"
+            android:theme="@android:style/Theme.NoDisplay" >
+            <intent-filter>
+              	<action android:name="android.intent.action.MAIN" /> 
+                <category android:name="android.intent.category.HOME" /><!-- 设置Home桌面 -->
+                <category android:name="android.intent.category.DEFAULT" /><!-- 没指定要跳转到哪个Activity -->
+            </intent-filter>
+        </activity>
+        
+        
         <service android:name=".FloatWindowService"></service>  
+        
+        <service android:name="com.android.gesture.builder.LockService"></service>
+        
+        <receiver android:name="com.android.gesture.builder.BootReceiver">
+            <intent-filter>  
+        		<action android:name="android.intent.action.BOOT_COMPLETED"/>  
+        		<category android:name="android.intent.category.HOME"/>  
+    		</intent-filter>  
+        </receiver>
         
     </application>
 

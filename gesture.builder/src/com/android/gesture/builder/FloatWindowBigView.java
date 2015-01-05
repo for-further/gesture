@@ -103,6 +103,11 @@ public class FloatWindowBigView extends LinearLayout {
 						.recognize(gesture); 	
 				if (predictions.size() > 0) {
 					Prediction prediction = (Prediction) predictions.get(0);
+					if(prediction.name.equals("锁屏手势")){
+						System.out.println("最相似的是锁屏手势");
+						prediction = (Prediction) predictions.get(1);
+						
+					}
 					// 匹配的手势
 					if (prediction.score > 1.0) { // 越匹配score的值越大，最大为10
 						

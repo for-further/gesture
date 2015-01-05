@@ -102,10 +102,23 @@ public class CreateGestureActivity extends Activity {
              * 
              */
             final GestureLibrary store = GestureBuilderActivity.getStore();
-            //System.out.println(name.toString());
+            
+            if(NAME.equals("锁屏手势")){
+            	if(store.load()){
+            		for (String name : store.getGestureEntries()) //先得到手势的名字
+            		if(name.equals("锁屏手势")){
+            			 for (Gesture gesture : store.getGestures(name)){
+            				 store.removeGesture(name, gesture);
+            			 }
+            			 store.save();
+            			 break;
+            		}
+            	}
+            }
+            
             store.addGesture(NAME, mGesture);
             store.save();
-
+            
             setResult(RESULT_OK);
 
             final String path = new File(Environment.getExternalStorageDirectory(),
@@ -114,9 +127,17 @@ public class CreateGestureActivity extends Activity {
         } else {
             setResult(RESULT_CANCELED);
         }
-
-        Intent in = new Intent(CreateGestureActivity.this, GestureBuilderActivity.class);
-        startActivity(in);
+        if(NAME.equals("锁屏手势")){
+        	System.out.println("lock start");
+        	Intent in = new Intent(CreateGestureActivity.this, LockScreen.class);
+        	startActivity(in);
+        	finish();
+        	System.out.println("create finish");
+        }else{
+        	Intent in = new Intent(CreateGestureActivity.this, GestureBuilderActivity.class);
+        	startActivity(in);
+        	finish();
+        }
         
     }
   
